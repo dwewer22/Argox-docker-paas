@@ -4,7 +4,7 @@
   "description": "Express Hello World on Render",
   "main": "server.js",
   "repository": "https://github.com/dwewer22/Argox-docker-paas",
-  "author": "fscarmen",
+  "author": "argox",
   "license": "MIT",
   "private": false,
   "scripts": {
