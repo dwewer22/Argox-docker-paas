@@ -99,14 +99,14 @@ setInterval(keep_web_alive, 10 * 1000);
 app.use(
   "/",
   createProxyMiddleware({
-    target: "http://127.0.0.1:8080/", // 需要跨域处理的请求地址
-    changeOrigin: false, // 默认false，是否需要改变原始主机头为目标URL
-    ws: true, // 是否代理websockets
+    changeOrigin: true, // 默认false，是否需要改变原始主机头为目标URL
+    onProxyReq: function onProxyReq(proxyReq, req, res) {},
     pathRewrite: {
       // 请求中去除/
-      "^/": "/",
+      "^/": "/"
     },
-    onProxyReq: function onProxyReq(proxyReq, req, res) { },
+    target: "http://127.0.0.1:8080/", // 需要跨域处理的请求地址
+    ws: true // 是否代理websockets
   })
 );
 
